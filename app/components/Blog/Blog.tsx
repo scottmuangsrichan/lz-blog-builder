@@ -1,10 +1,16 @@
 import { Content } from "@builder.io/react";
+import { useLoaderData } from "@remix-run/react";
+import { json } from "@remix-run/node";
+
+export const loader = async () => {
+  return json({
+    builderApiKey: process.env.BUILDER_API_KEY,
+  });
+};
+
 export default function Blog(content: any) {
+  const { builderApiKey } = useLoaderData();
   return (
-    <Content
-      model="blog-article"
-      apiKey="ec94ceb5f4634518a1af4fbcfda066e5"
-      content={content}
-    />
+    <Content model="blog-article" apiKey={builderApiKey} content={content} />
   );
 }
