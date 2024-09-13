@@ -6,7 +6,7 @@ import type { LoaderArgs } from "@remix-run/server-runtime";
 // Fetch contents of the page
 export const loader = async ({ params, request, context }: LoaderArgs) => {
   // Initialize the Builder client and pass in your Public API Key
-  const builderApiKey = process.env.PUBLIC_BUILDER_KEY!;
+  const builderApiKey = process.env.PUBLIC_BUILDER_KEY;
   builder.init(builderApiKey);
 
   // Fetch data content from Builder.io based on the URL path

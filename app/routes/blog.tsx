@@ -4,10 +4,10 @@ import { useLoaderData } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 import NavigationBar from "~/components/Navigation/Navigation";
 
-builder.init("ec94ceb5f4634518a1af4fbcfda066e5");
-builder.apiVersion = "v3";
-
 export const loader: LoaderFunction = async ({ params }) => {
+  const builderApi = process.env.BUILDER_API_KEY;
+  builder.init(builderApi);
+  builder.apiVersion = "v3";
   const page = await builder
     .get("blog-article", {
       userAttributes: {
