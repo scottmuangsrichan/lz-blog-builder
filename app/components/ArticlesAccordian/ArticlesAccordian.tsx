@@ -25,7 +25,7 @@ export default function ArticlesAccordian() {
     <div>
       {topics.map((topic) => {
         return (
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full" key={topic}>
             <AccordionItem value={topic}>
               <AccordionTrigger>{topic}</AccordionTrigger>
               <AccordionContent>Content</AccordionContent>
