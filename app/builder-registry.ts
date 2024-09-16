@@ -5,6 +5,7 @@ import StartYourBusinessCTA from "./components/StartYourBusinessCTA/StartYourBus
 import FooterAccordian from "./components/FooterAccordian/FooterAccordian";
 import ArticlesAccordian from "./components/ArticlesAccordian/ArticlesAccordian";
 import MobileNavigation from "./components/MobileNavigation/MobileNavigation";
+import Calculator from "./components/Calculator/Calculator";
 
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   {
@@ -30,5 +31,9 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
   {
     component: MobileNavigation,
     name: "Mobile Navigation",
+  },
+  {
+    component: Calculator,
+    name: "Calculator",
   },
 ];
