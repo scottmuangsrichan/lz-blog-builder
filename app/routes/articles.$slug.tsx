@@ -16,6 +16,11 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
   const urlPath = `/articles/${params["slug"] || ""}`;
 
+  const { initializeNodeRuntime } = await import(
+    "@builder.io/sdk-react/node/init"
+  );
+  await initializeNodeRuntime();
+
   const page = await fetchOneEntry({
     model: "page",
     apiKey: apiKey,
